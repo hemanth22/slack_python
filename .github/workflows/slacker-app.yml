@@ -29,8 +29,30 @@ jobs:
         python3 --version
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: Generate output
+      run: echo "Hello, world!" > output.txt
+
+    - name: Set output as environment variable
+      id: set_output
+      run: echo "::set-env name=OUTPUT::$(cat output.txt)"
+
+    - name: Use output
+      run: echo ${{ env.OUTPUT }}
+
     - name: slack notification
       run: python3 slacker.py
+      env:
+        SLACK1: ${{ secrets.SLACK1 }}
+        SLACK2: ${{ secrets.SLACK2 }}
+        SLACK3: ${{ secrets.SLACK3 }}
+
+    - name: sleep for 120 seconds
+      run: |
+        echo "Sleep"
+        sleep 120
+
+    - name: slack notification
+      run: python3 slacker2.py
       env:
         SLACK1: ${{ secrets.SLACK1 }}
         SLACK2: ${{ secrets.SLACK2 }}
