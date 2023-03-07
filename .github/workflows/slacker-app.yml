@@ -32,13 +32,6 @@ jobs:
     - name: Generate output
       run: echo "Hello, world!" > output.txt
 
-    - name: Set output as environment variable
-      id: set_output
-      run: echo "::set-env name=OUTPUT::$(cat output.txt)"
-
-    - name: Use output
-      run: echo ${{ env.OUTPUT }}
-
     - name: slack notification
       run: python3 slacker.py
       env:

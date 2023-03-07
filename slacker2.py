@@ -5,12 +5,14 @@ import os
 SLACK1=os.environ.get('SLACK1')
 SLACK2=os.environ.get('SLACK2')
 SLACK3=os.environ.get('SLACK3')
-basout=os.environ.get('OUTPUT')
+
+with open('output.txt','r') as file:
+    file_contents = file.read()
 
 # Set the webhook_url to the one provided by Slack when you create the webhook at https://my.slack.com/services/new/incoming-webhook/
 webhook_url = 'https://hooks.slack.com/services/'+SLACK1+'/'+SLACK2+'/'+SLACK3
 
-slack_data = {'text': "{basout}"}
+slack_data = {'text': "{file_contents}"}
 
 response = requests.post(
     webhook_url, data=json.dumps(slack_data),
