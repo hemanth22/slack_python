@@ -30,8 +30,13 @@ jobs:
     - name: Generate output
       run: echo "Hello, world!" > output.txt
 
+
+    - name: Generate output slack
+      run: echo "#mygitrepos" > gnews.txt
+
+
     - name: news api
-      run: python3 news.py > gnews.txt
+      run: python3 news.py >> gnews.txt
       env:
         NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
 
