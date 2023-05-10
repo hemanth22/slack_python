@@ -32,7 +32,7 @@ jobs:
 
 
     - name: Generate output slack
-      run: echo "#mygitrepos" > gnews.txt
+      run: echo "@channel," > gnews.txt
 
 
     - name: news api
