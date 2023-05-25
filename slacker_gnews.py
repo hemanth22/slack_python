@@ -12,7 +12,7 @@ with open('gnews.txt','r') as file:
 # Set the webhook_url to the one provided by Slack when you create the webhook at https://my.slack.com/services/new/incoming-webhook/
 webhook_url = 'https://hooks.slack.com/services/'+SLACK1+'/'+SLACK2+'/'+SLACK3
 
-slack_data = {'text': file_contents}
+slack_data = {'text': file_contents,"channel": "@channel"}
 
 response = requests.post(
     webhook_url, data=json.dumps(slack_data),
