@@ -77,3 +77,13 @@ jobs:
         SLACK1: ${{ secrets.SLACK1 }}
         SLACK2: ${{ secrets.SLACK2 }}
         SLACK3: ${{ secrets.SLACK3 }}
+
+    - name: telegram gnews notification
+      run: python3 telegram_bot_gnews.py
+      env:
+        TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
+
+    - name: telegram bloomberg news notification
+      run: python3 telegram_bot_bb.py
+      env:
+        TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
