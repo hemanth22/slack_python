@@ -74,3 +74,8 @@ jobs:
         SLACK1: ${{ secrets.SLACK1 }}
         SLACK2: ${{ secrets.SLACK2 }}
         SLACK3: ${{ secrets.SLACK3 }}
+
+    - name: telegram notification
+      run: python3 remainder.py
+      env:
+        TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
