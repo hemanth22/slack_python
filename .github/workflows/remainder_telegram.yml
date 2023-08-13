@@ -5,7 +5,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: "23 05 * * 0"
+    - cron: "30 05 * * 0"
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
         python3 --version
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: slack notification
+    - name: telegram notification
       run: python3 remainder.py
       env:
         TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
