@@ -5,7 +5,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: "30 04 * * 0"
+    - cron: "23 05 * * 0"
 
 jobs:
   build:
@@ -30,6 +30,4 @@ jobs:
     - name: slack notification
       run: python3 remainder.py
       env:
-        SLACK1: ${{ secrets.SLACK1 }}
-        SLACK2: ${{ secrets.SLACK2 }}
-        SLACK3: ${{ secrets.SLACK3 }}
+        TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
