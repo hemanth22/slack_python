@@ -5,7 +5,7 @@ bot_token = os.environ.get('TELE_TOKEN')
 
 #message = "Hello World!"
 
-with open('gnews.txt','r') as file:
+with open('remainder_today.txt','r') as file:
     file_contents = file.read()
 
 message = file_contents

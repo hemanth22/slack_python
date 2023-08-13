@@ -1,0 +1,2 @@
+Raise request to completed _own and _ro accounts for TAPI
+Remainder to learn complete KT classes for FxWatch, TAPI,Flexi

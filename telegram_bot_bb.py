@@ -15,4 +15,8 @@ def telegram_send_message(message):
     url = "https://api.telegram.org/bot{}/sendMessage?chat_id=1288523002&text={}".format(bot_token, message)
     requests.get(url)
 
-telegram_send_message(message)
+#telegram_send_message(message)
+
+for new_sendMessage_tele in message:
+    telegram_send_message(new_sendMessage_tele)
+
