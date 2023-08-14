@@ -17,6 +17,6 @@ def telegram_send_message(message):
 
 #telegram_send_message(message)
 
-for new_sendMessage_tele in message:
+for new_sendMessage_tele in message.split("\n"):
     telegram_send_message(new_sendMessage_tele)
 

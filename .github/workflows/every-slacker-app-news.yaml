@@ -32,7 +32,7 @@ jobs:
 
 
     - name: Generate output slack
-      run: echo "@@Nanoibot," > gnews.txt
+      run: echo "@Nanoibot," > gnews.txt
 
 
     - name: news api
