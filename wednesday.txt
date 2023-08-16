@@ -1,6 +1,1 @@
-Work on TAPI RO and OWN accounts
-Work on SSH connectivity
-Follow up with Vish on TAPI RO
-NVA Follow and fix .jar file and run NVA scan again
-Work on ISCD
-Verify _own accounts in RunDB
+nothing
