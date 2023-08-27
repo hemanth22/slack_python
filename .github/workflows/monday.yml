@@ -5,7 +5,7 @@ name: Monday
 
 on:
   schedule:
-    - cron: "00 03 * * 1"
+    - cron: "30 05 * * 1"
 
 jobs:
   build:
