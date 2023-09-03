@@ -5,3 +5,4 @@ Schedule a meeting on ISCD and NVA with dev team
 Verify _ro accounts in RunDB
 
 Follow with YT on EDGE OS Patching
+Create a CR and submit CR for TONL Backend URL change by Approval EASRE team
