@@ -3,3 +3,5 @@ send config file to parthipan about cybersecure
 NVA Follow and fix .jar file and run NVA scan again
 Schedule a meeting on ISCD and NVA with dev team
 Verify _ro accounts in RunDB
+
+Follow with YT on EDGE OS Patching

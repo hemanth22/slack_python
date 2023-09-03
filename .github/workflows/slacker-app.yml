@@ -32,49 +32,6 @@ jobs:
     - name: Generate output
       run: echo "Hello, world!" > output.txt
 
-    - name: news api
-      run: python3 news.py > gnews.txt
-      env:
-        NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-
-    - name: bloomberg news api
-      run: python3 bloombergv1.py > bloombergv1news.txt
-      env:
-        NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-        BLOOM_KEY: ${{ secrets.BLOOM_KEY }}
-        BLOOM_HOST: ${{ secrets.BLOOM_HOST }}
-
-    - name: sleep for 120 seconds
-      run: |
-        echo "Sleep"
-        sleep 120
-
-    - name: required bloomberg news api
-      run: python3 bloombergv2.py >> bloombergv1news.txt
-      env:
-        NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-        BLOOM_KEY: ${{ secrets.BLOOM_KEY }}
-        BLOOM_HOST: ${{ secrets.BLOOM_HOST }}
-
-    - name: slack notification
-      run: python3 slacker_bloom.py
-      env:
-        SLACK1: ${{ secrets.SLACK1 }}
-        SLACK2: ${{ secrets.SLACK2 }}
-        SLACK3: ${{ secrets.SLACK3 }}
-
-    - name: sleep for 120 seconds
-      run: |
-        echo "Sleep"
-        sleep 60
-
-    - name: slack notification
-      run: python3 slacker_gnews.py
-      env:
-        SLACK1: ${{ secrets.SLACK1 }}
-        SLACK2: ${{ secrets.SLACK2 }}
-        SLACK3: ${{ secrets.SLACK3 }}
-
     - name: telegram notification
       run: python3 remainder.py
       env:
