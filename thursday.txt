@@ -1,7 +1,1 @@
-Book train ticket to tirupati
-Drop a mail to HR about insurance policy
-Work on SSH connectivity
-follow up parthipan about cybersecure
-NVA Follow and fix .jar file and run NVA scan again
-Work on ISCD
-Verify _own accounts in RunDB
+nothing
