@@ -1,1 +1,6 @@
-nothing
+schedule GitHub to stay connected with CI CD apps
+Circle CI
+Travis CI
+AppVeyor
+
+Prepare a fastApi web Ui for Ask and Bid rate
