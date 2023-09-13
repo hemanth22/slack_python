@@ -6,9 +6,10 @@ import datetime
 BLOOM_KEY = os.environ.get('BLOOM_KEY')
 BLOOM_HOST = os.environ.get('BLOOM_HOST')
 
-url = "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete"
+#url = "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete"
+url = "https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list"
 
-querystring = {"query":"SGD"}
+querystring = {"query":"markets"}
 #querystring = {"query":"INR"}
 
 headers = {
