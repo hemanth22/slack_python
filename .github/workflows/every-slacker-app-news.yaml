@@ -30,6 +30,30 @@ jobs:
     - name: Generate output
       run: echo "Hello, world!" > output.txt
 
+    - name: bloomberg news api for IN
+      run: python3 newsAPI_v2_in.py >> newsAPI.txt
+      env:
+        NEWS_API: ${{ secrets.NEWS_API }}
+
+    - name: bloomberg news api for SG
+      run: python3 newsAPI_v2_sg.py >> newsAPI.txt
+      env:
+        NEWS_API: ${{ secrets.NEWS_API }}
+
+    - name: bloomberg news api for US
+      run: python3 newsAPI_v2_us.py >> newsAPI.txt
+      env:
+        NEWS_API: ${{ secrets.NEWS_API }}
+
+    - name: News API everything
+      run: python3 newsAPI_everything_basic_v2.py >> newsAPI.txt
+      env:
+        NEWS_API: ${{ secrets.NEWS_API }}
+
+    - name: telegram notify newsAPI
+      run: python3 telegram_bot_newsAPI.py
+      env:
+        TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
 
     - name: Generate output slack
       run: echo "@Nanoibot," > gnews.txt
