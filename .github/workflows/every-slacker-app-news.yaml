@@ -50,6 +50,16 @@ jobs:
       env:
         NEWS_API: ${{ secrets.NEWS_API }}
 
+    - name: NewsData API Currency
+      run: newsdata_fnal.py >> newsAPI.txt
+      env:
+        NEWS_DATA_API: ${{ secrets.NEWS_DATA_API }}
+
+    - name: NewsData API Country
+      run: newsdata_fnal_country.py >> newsAPI.txt
+      env:
+        NEWS_DATA_API: ${{ secrets.NEWS_DATA_API }}
+
     - name: telegram notify newsAPI
       run: python3 telegram_bot_newsAPI.py
       env:
