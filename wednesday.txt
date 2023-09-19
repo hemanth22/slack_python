@@ -1,1 +1,15 @@
-nothing
+Discuss Leave plan for 5th October
+Remove DB Over issue for RET
+FxWatch Delayed replica follow-up
+DCC Prod Servers follow up , if need schedule a meeting
+Follow up with upstream and Get RSA key generated for EFX-ID server
+Follow up on alok singh work
+Follow up on EFX-ID ISCD
+TMUP DB Servers OS RHEL Upgrade
+- LV
+- Implementation steps
+follow up parthipan about cybersecure
+NVA Follow and fix .jar file and run NVA scan again
+Work on ISCD
+Verify _own accounts in RunDB
+Veify  _ro accounts in RunDB
