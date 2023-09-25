@@ -1,1 +1,11 @@
-nothing
+Discuss Leave plan for 5th October
+Cyberark Password with issues
+FxWatch Delayed replica follow-up
+Follow up on alok singh work
+Follow up on EFX-ID ISCD
+TMUP DB Servers OS RHEL Upgrade
+- LV
+- Implementation steps
+follow up parthipan about cybersecure
+Verify _own accounts in RunDB
+Veify  _ro accounts in RunDB
