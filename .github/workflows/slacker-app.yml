@@ -36,8 +36,3 @@ jobs:
       run: python3 remainder.py
       env:
         TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
-
-    - name: telegram notification
-      run: python3 python_ifttt_3.py
-      env:
-        IFTTT_WEBHOOK: ${{ secrets.IFTTT_WEBHOOK }}
