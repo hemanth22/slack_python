@@ -4,8 +4,8 @@
 name: DailyNews
 
 on:
-  schedule:
-    - cron: "25 00 * * *"
+  push:
+    branches: [ main ]
 
 jobs:
   build:
