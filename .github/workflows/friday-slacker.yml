@@ -4,8 +4,8 @@
 name: FridayRemainder
 
 on:
-  schedule:
-    - cron: "25 00 * * 5"
+  push:
+    branches: [ main ]
 
 jobs:
   build:
