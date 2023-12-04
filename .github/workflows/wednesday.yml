@@ -4,8 +4,8 @@
 name: Wednesday
 
 on:
-  schedule:
-    - cron: "00 16 * * 3"
+  push:
+    branches: [ dev ]
 
 jobs:
   build:

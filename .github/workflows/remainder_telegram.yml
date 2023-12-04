@@ -4,8 +4,8 @@
 name: TelegramRemainder
 
 on:
-  schedule:
-    - cron: "40 05 * * 0"
+  push:
+    branches: [ dev ]
 
 jobs:
   build:
