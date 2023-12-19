@@ -1,0 +1,42 @@
+version: 2.1
+orbs:
+  python: circleci/python@2.0.3
+
+jobs:
+  build_and_test: # this can be any name you choose
+    executor: python/default
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: Print python version
+          command: python -V
+
+      - run:
+          name: Download python dependencies
+          command: pip3 install -r requirements.txt
+
+      - run:
+          name: Get Date
+          command: date
+
+      - run:
+          name: Get TimeConverter
+          command: python bb_finance.py
+
+      - run:
+          name: present workdirectory
+          command: pwd
+
+workflows:
+  ifttt_app:
+    jobs:
+      - build_and_test
+    triggers:
+      - schedule:
+          cron: "30 2 * * *"
+          filters:
+            branches:
+              only:
+                - main
