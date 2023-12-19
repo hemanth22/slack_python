@@ -30,20 +30,6 @@ jobs:
     - name: Generate output
       run: echo "Hello, world!" > output.txt
 
-    - name: telegram notify newsAPI
-      run: python3 telegram_bot_newsAPI.py
-      env:
-        TELE_TOKEN: ${{ secrets.TELE_TOKEN }}
-
-    - name: Generate output slack
-      run: echo "@Nanoibot," > gnews.txt
-
-
-    - name: news api
-      run: python3 news.py >> gnews.txt
-      env:
-        NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-
     - name: bloomberg regional news
       run: python3 bb_regional.py > bloomberg_all_news.txt
       env:
