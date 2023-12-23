@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_hemanth22_slack_python_1703342295393-push-trigger-input-set
+  identifier: Build_hemanth22_slack_python_1703342295393pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_hemanth22_slack_python_1703342295393
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
