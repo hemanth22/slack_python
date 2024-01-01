@@ -3,9 +3,7 @@
 
 name: DailyNews
 
-on:
-  schedule:
-    - cron: "30 01 * * *"
+
 
 jobs:
   build:
