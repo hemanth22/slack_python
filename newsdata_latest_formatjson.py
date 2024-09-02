@@ -7,6 +7,8 @@ import requests
 import os
 import json
 
+requesturl = os.environ.get('KAFKA_RECEIVER')
+
 # Kafka configuration
 bootstrap_servers_sv1 = os.environ.get('BOOTSTRAP_SERVER_NAME')
 sasl_mechanism_sv1 = os.environ.get('SASL_MECH')
@@ -38,9 +40,20 @@ def serialize_data(data):
     """
     return json.dumps(data)
 
+def send_dataToFastAPI(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        print("Request sent successfully")
+
+    if response.status_code != 200:
+        print(f"Failed to send data. Status code: {response.status_code}")
+
+
 NEWS_DATA_API = os.environ.get('NEWSDATA_API_KEY')
 base_url = 'https://newsdata.io/api/1/latest'
-queries = ['dbs', 'gold', 'deposits', 'mutual', 'dalal', 'sensex', 'nifty', 'gift', 'bank', 'crude', 'oil', 'fed', 'recession']
+#queries = ['dbs', 'gold', 'deposits', 'mutual', 'dalal', 'sensex', 'nifty', 'gift', 'bank', 'crude', 'oil', 'fed', 'recession']
+#queries = ['sensex', 'nifty']
+queries = ['STOXX','FTSE','CAC','DAX']
 
 for query in queries:
     parameters = {
@@ -60,6 +73,7 @@ for query in queries:
                         "message": {
                             "title": result.get('title', 'no news'),
                             "description": result.get('description', 'no news'),
+                            "pubDate": result.get('pubDate', 'no news'),
                             "source_id": result.get('source_id', 'unknown')
                         }
                     }
@@ -76,3 +90,6 @@ for query in queries:
 # Ensure all messages are sent before closing
 producer.flush()
 producer.close()
+print("Notifying to Kafka Receiver")
+send_dataToFastAPI(requesturl)
+print("Producer Job Completed")
